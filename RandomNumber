@@ -1,0 +1,29 @@
+
+public class RandomNumber 
+{
+	private int Low;
+	private int High;
+	
+	public RandomNumber(int lo, int hi)
+	{
+		Low = lo;
+		High = hi;
+	}
+	
+	
+	public int GetLowNumber()
+	{
+		return Low;
+	}
+	
+	public int GetHighNumber()
+	{
+		return High;
+	}
+	
+	public int GetANumber()
+	{
+		int computerNumber = (Low + (int)( Math.random()* High));;
+		return computerNumber;
+	}
+}
