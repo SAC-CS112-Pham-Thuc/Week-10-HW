@@ -1,0 +1,53 @@
+
+import javax.swing.JOptionPane;
+
+public class GuessANumber 
+{
+	public static void main( String[] args )
+	{
+		
+		
+		
+		
+		int computerNum;
+		int player;
+		String High;
+		int high;
+		int count = 1;
+		boolean computerNumNotEqualPlayer = true;
+		boolean computerNumEqualPlayer = true;
+		
+		  
+		
+		do
+		{
+			JOptionPane.showMessageDialog(null, "Game Number: " + count); count++;
+			High = JOptionPane.showInputDialog("Choose number of Dices you want to play with. \n If ONE dice enter in 6! \n If TWO dices enter in 12! \n If THREE dices enter in 18!");
+			high = Integer.parseInt(High);
+		RandomNumber comRandomNumber = new RandomNumber(1,high);
+		computerNum = comRandomNumber.GetANumber();
+		
+		String playerinput = 
+						JOptionPane.showInputDialog( "Enter a number: ");
+
+		player = Integer.parseInt(playerinput);
+		
+		computerNumNotEqualPlayer = player < computerNum || player > computerNum;
+		computerNumEqualPlayer = computerNum == player;
+		
+		if ((computerNumNotEqualPlayer))
+			JOptionPane.showMessageDialog(null, "Incorrect Guess! Guess again!\n");
+		
+		String message = 
+				String.format( "Random number is %d \n\n", computerNum );
+		JOptionPane.showMessageDialog(null, message);
+		
+		}
+		while ((player != computerNum));
+
+			if (computerNumEqualPlayer)
+				JOptionPane.showMessageDialog(null, "Correct Guess! Player Win!\n");
+			JOptionPane.showMessageDialog(null, "Good Bye!");	
+		
+	}
+}
